@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties>
+        <property name="dialect" value="mysql" />
+    </properties>
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+
+
+    <typeAliases>
+        <package name="com.hfut.pojo"/> <!--包名取别名-->
+       <!-- <typeAlias type="com.hfut.pojo.People" alias="Peo"></typeAlias> 类名取别名-->
+    </typeAliases> <!--取别名-->
+
+
+    <environments default="default">
+        <environment id="default">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/ssm"/>
+                <property name="username" value="root"/>
+                <property name="password" value="12345678"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <package name="com.hfut.mapper"></package>
+    </mappers>
+</configuration>
